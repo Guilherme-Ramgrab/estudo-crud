@@ -69,7 +69,20 @@ function Funcionarios() {
   }
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg"
+      sx={{
+        width: '1126px',
+        maxWidth: '100%',
+        margin: '0 auto',
+        textAlign: 'center',
+        minHeight: '90svh',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: "#121212",
+        borderRadius: 4,
+        padding: 4,
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
@@ -79,13 +92,16 @@ function Funcionarios() {
         }}
       >
         <Typography variant="h4">
-          Funcionários
+          FUNCIONÁRIOS
         </Typography>
 
         <Button
           variant="contained"
           startIcon={<AddIcon />}
           onClick={handleNovoFuncionario}
+          sx={{
+            background: '#2f9e41'
+          }}
         >
           Novo Funcionário
         </Button>
@@ -115,7 +131,7 @@ function Funcionarios() {
           onCancel={handleFecharModal}
         />
       </Dialog>
-    </Container>
+    </Container >
   );
 }
 
