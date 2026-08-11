@@ -65,7 +65,7 @@ function FuncionarioTable({ funcionarios, onEdit, onDelete }) {
                 <Tooltip title="Excluir">
                   <IconButton
                     color="error"
-                    onClick={() => onDelete(funcionario)}
+                    onClick={() => onDelete(funcionario.id)}
                   >
                     <DeleteIcon />
                   </IconButton>

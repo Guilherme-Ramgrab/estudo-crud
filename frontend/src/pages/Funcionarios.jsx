@@ -59,8 +59,16 @@ function Funcionarios() {
     }
   }
 
-  function handleExcluirFuncionario(funcionario) {
-    console.log('Excluir funcionário:', funcionario);
+  async function handleExcluirFuncionario(id) {
+    try {
+      await api.delete(`funcionarios/${id}/`);
+
+      
+    } catch (error) {
+      console.error('Erro ao salvar funcionário:', error);
+    } finally {
+      await carregarFuncionarios();
+    }
   }
 
   function handleFecharModal() {
