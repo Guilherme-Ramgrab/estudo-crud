@@ -78,7 +78,7 @@ function Funcionarios() {
         minHeight: '90svh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: "#121212",
+        backgroundColor: "#fffffff6",
         borderRadius: 4,
         padding: 4,
       }}
@@ -91,7 +91,12 @@ function Funcionarios() {
           mb: 3,
         }}
       >
-        <Typography variant="h4">
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 'bold'
+          }}
+        >
           FUNCIONÁRIOS
         </Typography>
 
@@ -119,7 +124,12 @@ function Funcionarios() {
         fullWidth
         maxWidth="sm"
       >
-        <DialogTitle>
+        <DialogTitle
+          sx={{
+            textAlign: 'center',
+            fontSize: '40px'
+          }}
+        >
           {funcionarioSelecionado
             ? 'Editar Funcionário'
             : 'Novo Funcionário'}

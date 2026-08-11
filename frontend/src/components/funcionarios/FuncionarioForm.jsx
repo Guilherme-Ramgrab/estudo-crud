@@ -47,7 +47,11 @@ function FuncionarioForm({ funcionario, onSubmit, onCancel }) {
 
   return (
     <Box component="form" onSubmit={handleSubmit}>
-      <DialogContent>
+      <DialogContent
+        sx={{
+          padding: '0 24px 20px '
+        }}
+      >
         <TextField
           fullWidth
           required
@@ -97,6 +101,9 @@ function FuncionarioForm({ funcionario, onSubmit, onCancel }) {
         <Button
           type="submit"
           variant="contained"
+          sx={{
+            background: '#2f9e41'
+          }}
         >
           Salvar
         </Button>
