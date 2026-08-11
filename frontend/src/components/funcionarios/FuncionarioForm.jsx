@@ -14,7 +14,7 @@ const estadoInicial = {
   cargo: '',
 };
 
-function FuncionarioForm({ funcionario, onSubmit, onCancel }) {
+function FuncionarioForm({ funcionario, onSubmit, onCancel, erros }) {
   const [formulario, setFormulario] = useState(estadoInicial);
 
   useEffect(() => {
@@ -71,6 +71,8 @@ function FuncionarioForm({ funcionario, onSubmit, onCancel }) {
           value={formulario.email}
           onChange={handleChange}
           margin="normal"
+          error={!!erros.email}
+          helperText={erros.email || ''}
         />
 
         <TextField
