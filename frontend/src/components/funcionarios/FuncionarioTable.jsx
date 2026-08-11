@@ -12,17 +12,35 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+const sxCelula = {
+  color: '#fff',
+  fontWeight: 'bold'
+}
+
 function FuncionarioTable({ funcionarios, onEdit, onDelete }) {
   return (
     <TableContainer component={Paper}>
       <Table>
-        <TableHead>
+        <TableHead
+          sx={{
+            background: '#036e15f5',
+          }}
+        >
           <TableRow>
-            <TableCell>Nome</TableCell>
-            <TableCell>E-mail</TableCell>
-            <TableCell>Telefone</TableCell>
-            <TableCell>Cargo</TableCell>
-            <TableCell align="center">Ações</TableCell>
+            <TableCell sx={sxCelula}>
+              NOME
+            </TableCell>
+            <TableCell sx={sxCelula}>
+              E-MAIL
+            </TableCell>
+            <TableCell sx={sxCelula}>
+              TELEFONE
+            </TableCell>
+            <TableCell sx={sxCelula}>
+              CARGO
+            </TableCell>
+            <TableCell sx={sxCelula}>
+            </TableCell>
           </TableRow>
         </TableHead>
 
