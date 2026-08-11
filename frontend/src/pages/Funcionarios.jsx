@@ -50,41 +50,45 @@ function Funcionarios() {
 
         const response = await api.put(`funcionarios/${funcionarioSelecionado.id}/`, dados);
 
-        if (response.status === 200) {
-          Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 5000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          }).fire({
-            icon: "success",
-            title: "Cadastro editado com sucesso!"
-          });
-        }
+        setTimeout(() => {
+          if (response.status === 200) {
+            Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 5000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              }
+            }).fire({
+              icon: "success",
+              title: "Cadastro editado com sucesso!"
+            });
+          }
+        }, 800);
       } else {
         const response = await api.post('funcionarios/', dados);
 
-        if (response.status === 201) {
-          Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 5000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          }).fire({
-            icon: "success",
-            title: "Funcionário cadastrado com sucesso!"
-          });
-        }
+        setTimeout(() => {
+          if (response.status === 201) {
+            Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 5000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              }
+            }).fire({
+              icon: "success",
+              title: "Funcionário cadastrado com sucesso!"
+            });
+          }
+        }, 800);
       }
 
       await carregarFuncionarios();
@@ -145,6 +149,7 @@ function Funcionarios() {
   function handleFecharModal() {
     setOpenModal(false);
     setFuncionarioSelecionado(null);
+    setErros({})
   }
 
   return (
